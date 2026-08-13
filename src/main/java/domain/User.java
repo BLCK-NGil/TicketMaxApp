@@ -16,7 +16,7 @@ public class User extends Person{
 
     @Override
     public void selectById(int id){
-        super.selectByID(id);
+        super.selectById(id);
     }
 
     @Override
