@@ -20,7 +20,7 @@ public class Payment {
     public void selectPaymentId(int id){
 
     }
-    public void selectAll(){
+    public void selectAll() {
 
     }
 }
