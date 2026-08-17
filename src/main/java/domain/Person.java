@@ -24,5 +24,8 @@ public class Person {
     public void delete(int id){
 
     }
+    public void selectState(int id){
+
+    }
 }
 

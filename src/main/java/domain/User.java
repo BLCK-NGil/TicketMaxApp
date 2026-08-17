@@ -11,6 +11,7 @@ public class User extends Person{
 
      @Override
     public void selectAll(){
+
         super.selectAll();
     }
 
@@ -26,6 +27,12 @@ public class User extends Person{
 
     @Override
     public void delete(int id) {
+
         super.delete(id);
+    }
+
+    @Override
+    public void selectState(int id){ super.selectState(int id);
+
     }
 }
