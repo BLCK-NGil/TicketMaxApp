@@ -4,9 +4,18 @@ import java.time.LocalDate;
 
 public class Order {
     private int orderId;
-    private localDate orderDate;
     private double orderTotal;
     private String orderStatus;
+
+    public Order() {
+        super();
+    }
+
+    public Order(String orderStatus, int orderId, double orderTotal) {
+        this.orderStatus = orderStatus;
+        this.orderId = orderId;
+        this.orderTotal = orderTotal;
+    }
 
     public void createOrder(String Type){
 

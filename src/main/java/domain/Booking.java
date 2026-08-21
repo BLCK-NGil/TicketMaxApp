@@ -1,11 +1,8 @@
 package domain;
 
-import java.time.localDate;
-
 public class Booking {
     private int bookingId;
     private String bookingName;
-    private localDate bookingDate;
     private String status;
 
 

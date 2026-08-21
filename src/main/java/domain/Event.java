@@ -9,6 +9,8 @@ public class Event {
     private String date;
     private String time;
 
+
+
     public void createEvent(String type) {
     }
     public void selectAll(){

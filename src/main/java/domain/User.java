@@ -4,6 +4,16 @@ public class User extends Person{
     private String city;
     private String preferences;
 
+    public User() {
+        super();
+    }
+
+    public User(int id, String name, String lastName, String email, String phone, String password, String city, String preferences) {
+        super(id, name, lastName, email, phone, password);
+        this.city = city;
+        this.preferences = preferences;
+    }
+
     @Override
     public void create() {
         super.create();
@@ -32,7 +42,8 @@ public class User extends Person{
     }
 
     @Override
-    public void selectState(int id){ super.selectState(int id);
+    public void selectState(int id){
+        super.selectState();
 
     }
 }
