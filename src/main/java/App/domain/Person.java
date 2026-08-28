@@ -1,4 +1,4 @@
-package domain;
+package App.domain;
 
 public class Person {
     protected int id;

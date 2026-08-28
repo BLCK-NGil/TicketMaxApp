@@ -1,4 +1,4 @@
-package domain;
+package App.domain;
 
 public class Admin extends Person{
     private String role;
