@@ -1,5 +1,7 @@
 package App.domain;
 
+import App.domain.enums.SelectStateEnum;
+
 public class Person {
     protected int id;
     protected String name;
