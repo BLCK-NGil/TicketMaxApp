@@ -10,6 +10,7 @@ import app.service.outputports.PlaceRepository;
 import java.util.List;
 
 public class PlaceServiceImpl implements PlaceService {
+
     private final PlaceRepository placeRepository;
 
     public PlaceServiceImpl(PlaceRepository placeRepository) {
@@ -21,8 +22,7 @@ public class PlaceServiceImpl implements PlaceService {
         if (placeRepository.selectById(placeId) != null) {
             throw new DuplicateEntityException("un lugar", placeId);
         }
-        Place place = new Place(placeId, city, placeName, new SceneryTypeEnum.valueOf(scenaryType));
-
+        Place place = new Place(placeId, city, placeName, ScenaryTypeEnum.valueOf(scenaryType));
         return placeRepository.save(place);
     }
 
@@ -37,13 +37,13 @@ public class PlaceServiceImpl implements PlaceService {
 
     @Override
     public List<Place> selectPlaces() {
-        return  placeRepository.selectAll();
+        return placeRepository.selectAll();
     }
 
     @Override
     public Place update(Integer placeId, String city, String placeName, String scenaryType) {
         selectById(placeId);
-        Place place = new Place(placeId, city, placeName, scenaryTypeEnum.valueOf(scenaryType));
+        Place place = new Place(placeId, city, placeName, ScenaryTypeEnum.valueOf(scenaryType));
         return placeRepository.updatePlace(place);
     }
 

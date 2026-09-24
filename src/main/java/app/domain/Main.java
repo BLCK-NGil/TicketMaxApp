@@ -1,9 +1,7 @@
-package app;
+package app.domain;
 
 import app.repository.PlaceRepositoryImplCollection;
-import app.service.PlaceServiceImpl;
 import app.service.inputports.PlaceService;
-import app.service.outputports.PlaceRepository;
 import app.view.PlaceView;
 
 public class Main {

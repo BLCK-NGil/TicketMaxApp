@@ -1,7 +1,6 @@
 package app.repository;
 
 import app.domain.Place;
-import app.service.outputports.PlaceRepository;
 
 import java.util.ArrayList;
 import java.util.List;

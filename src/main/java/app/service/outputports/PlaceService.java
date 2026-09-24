@@ -4,7 +4,7 @@ import app.domain.Place;
 
 import java.util.List;
 
-public interface PlaceRepository {
+public interface PlaceService {
     Place save(Place place);
     Place selectById(int id);
     List<Place> selectAll();
