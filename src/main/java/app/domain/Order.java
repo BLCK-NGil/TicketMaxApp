@@ -1,6 +1,4 @@
-package domain;
-
-import java.time.LocalDate;
+package app.domain;
 
 public class Order {
     private int orderId;

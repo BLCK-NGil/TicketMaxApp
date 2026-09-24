@@ -1,4 +1,4 @@
-package domain;
+package app.domain;
 
 public class Payment {
     private String type;

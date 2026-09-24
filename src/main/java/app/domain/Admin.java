@@ -1,27 +1,33 @@
-package domain;
+package app.domain;
 
-public class User extends Person{
-    private String city;
-    private String preferences;
+public class Admin extends Person {
+    private String role;
+
+    public Admin(){
+
+        super();
+    }
 
     @Override
     public void create() {
+
         super.create();
     }
 
-     @Override
+    @Override
     public void selectAll(){
-
         super.selectAll();
     }
 
     @Override
-    public void selectById(int id){
+    public void selectById(int id) {
+
         super.selectById(id);
     }
 
     @Override
     public void update(){
+
         super.update();
     }
 
@@ -32,7 +38,7 @@ public class User extends Person{
     }
 
     @Override
-    public void selectState(int id){ super.selectState(int id);
-
+    public void selectState(int id) {
+        super.selectState(id);
     }
 }

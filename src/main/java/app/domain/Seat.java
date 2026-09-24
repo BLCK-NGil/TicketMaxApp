@@ -1,4 +1,4 @@
-package domain;
+package app.domain;
 
 public class Seat {
     private int idSeat;
