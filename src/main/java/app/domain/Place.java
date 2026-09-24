@@ -1,31 +1,20 @@
-package app.domain;
-
-import app.domain.enums.ScenaryTypeEnum;
+package App.domain;
 
 public class Place {
-
-    private Integer placeId;
+    private Integer id;
     private String city;
     private String placeName;
-    private ScenaryTypeEnum scenaryType;
+    private String scenaryType;
 
     public Place() {
+
     }
 
-    public Place(Integer placeId, String city, String placeName, ScenaryTypeEnum scenaryType) {
-        this.placeId = placeId;
+    public Place(Integer id, String city, String placeName, String scenaryType) {
+        this.id = id;
         this.city = city;
         this.placeName = placeName;
         this.scenaryType = scenaryType;
-    }
-
-    public Integer getPlaceId() {
-
-        return placeId;
-    }
-
-    public void setPlaceId(Integer placeId) {
-        this.placeId = placeId;
     }
 
     public String getCity() {
@@ -36,6 +25,14 @@ public class Place {
         this.city = city;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getPlaceName() {
         return placeName;
     }
@@ -44,16 +41,33 @@ public class Place {
         this.placeName = placeName;
     }
 
-    public ScenaryTypeEnum getScenaryType() {
+    public String getScenaryType() {
         return scenaryType;
     }
 
-    public void setScenaryType(ScenaryTypeEnum scenaryType) {
+    public void setScenaryType(String scenaryType) {
         this.scenaryType = scenaryType;
     }
+}
+//Por ahora porque después los moveremos de carpeta al service
 
-    @Override
-    public String toString() {
-        return "Place{id=" + placeId + ", ciudad=" + city + ", nombre=" + placeName + ", tipo=" + scenaryType + "}";
+    public void create() {
+
     }
+    public void selectAllPlaces() {
+
+    }
+    public void selectByPlaceId(int id) {
+
+    }
+    public void updatePlace(){
+
+    }
+    public void deletePlace(int id){
+
+    }
+    public void selectPlaceState(int id){
+
+    }
+
 }

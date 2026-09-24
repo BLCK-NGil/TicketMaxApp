@@ -1,30 +1,27 @@
-package app.domain;
-
-import app.domain.enums.SeatSectorEnum;
+package App.domain;
 
 public class Seat {
-
-    private Integer seatId;
+    private int idSeat;
     private String seatNumber;
-    private SeatSectorEnum seatSector;
-    private boolean available;
+    private String seatSector;
+    private boolean isAvailable;
 
     public Seat() {
     }
 
-    public Seat(Integer seatId, String seatNumber, SeatSectorEnum seatSector, boolean available) {
-        this.seatId = seatId;
+    public Seat(int idSeat, String seatNumber, String seatSector, boolean state) {
+        this.idSeat = idSeat;
         this.seatNumber = seatNumber;
         this.seatSector = seatSector;
-        this.available = available;
+        this.state = state;
     }
 
-    public Integer getSeatId() {
-        return seatId;
+    public int getIdSeat() {
+        return idSeat;
     }
 
-    public void setSeatId(Integer seatId) {
-        this.seatId = seatId;
+    public void setIdSeat(int idSeat) {
+        this.idSeat = idSeat;
     }
 
     public String getSeatNumber() {
@@ -35,26 +32,35 @@ public class Seat {
         this.seatNumber = seatNumber;
     }
 
-    public SeatSectorEnum getSeatSector() {
+    public String getSeatSector() {
         return seatSector;
     }
 
-    public void setSeatSector(SeatSectorEnum seatSector) {
+    public void setSeatSector(String seatSector) {
         this.seatSector = seatSector;
     }
 
-    //El getter de un `boolean` se llama `is...`
     public boolean isAvailable() {
-        return available;
+        return isAvailable;
     }
 
     public void setAvailable(boolean available) {
-        this.available = available;
+        isAvailable = available;
     }
 
-    @Override
-    public String toString() {
-        return "Seat{id=" + seatId + ", número=" + seatNumber + ", sector=" + seatSector
-                + ", disponible=" + (available ? "sí" : "no") + "}";
+    public void createSeat(String type){
     }
+    public void SelectAllSeats(){
+
+    }
+    public void selectSeatById(int id){
+
+    }
+    public void updateSeat(int id){
+
+    }
+    public void deleteSeat(int id){
+
+    }
+
 }
