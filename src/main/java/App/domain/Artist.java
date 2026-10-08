@@ -40,25 +40,11 @@ public class Artist {
         isAvailable = available;
     }
 
-    public void createArtist(){
+    // Los métodos create/select/update/delete se movieron al service (ArtistServiceImpl)
 
+    @Override
+    public String toString() {
+        String availability = isAvailable ? "Disponible" : "No disponible";
+        return "Artista #" + artistId + " | " + artistName + " | " + availability;
     }
-
-    public void selectAllArtist(){
-
-    }
-
-    public void selectArtistById(int id){
-
-    }
-
-    public void updateArtist(){
-
-    }
-
-    public void deleteArtist(int id){
-
-    }
-
-
 }

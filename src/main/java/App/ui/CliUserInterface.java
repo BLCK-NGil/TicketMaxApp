@@ -5,6 +5,8 @@ import app.service.UserServiceImpl;
 import app.service.inputports.UserService;
 import app.service.outputports.UserRepository;
 import app.service.validators.DataTypeValidator;
+import app.view.ArtistView;
+import app.view.PlaceView;
 import app.view.SeatView;
 import app.view.UserView;
 
@@ -14,11 +16,14 @@ public class CliUserInterface {
 
     private final UserView userView;
     private final SeatView seatView;
+    private final PlaceView placeView;
+    private final ArtistView artistView;
 
-    public CliUserInterface(UserView userView , SeatView seatView){
+    public CliUserInterface(UserView userView , SeatView seatView, PlaceView placeView, ArtistView artistView){
         this.userView = userView;
         this.seatView = seatView;
-
+        this.placeView = placeView;
+        this.artistView = artistView;
     }
 
     public void applicationInit(){
@@ -32,7 +37,9 @@ public class CliUserInterface {
 
             int option = DataTypeValidator.validateInt("1. Registro " +
                     "2. Login" +
-                    "3. Salir");
+                    "3. Lugares" +
+                    "4. Artistas" +
+                    "0. Salir");
 
             switch (option){
                 case 1:
@@ -43,6 +50,12 @@ public class CliUserInterface {
                     userMenu();
                     break;
                 case 3:
+                    placeView.showMenu();
+                    break;
+                case 4:
+                    artistView.showMenu();
+                    break;
+                case 0:
                     System.out.println("Saliendo de la aplicación");
                     init = 0;
                     break;
