@@ -1,4 +1,4 @@
-package app.service.validators;
+package app.service;
 
 import app.domain.Place;
 import app.domain.enums.ScenaryTypeEnum;

@@ -49,7 +49,7 @@ public class UserView {
         System.out.println("Usuario eliminado.");
     }
 
-    // Un solo formulario para crear y actualizar (DRY), igual que en PlaceView
+    // un solo formulario para crear y actualizar (DRY), igual que en PlaceView
     private void fillForm(boolean isUpdate) {
 
         int id = DataTypeValidator.validateInt("Ingrese el id del usuario: ");

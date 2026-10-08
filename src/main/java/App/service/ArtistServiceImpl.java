@@ -1,4 +1,4 @@
-package app.service.validators;
+package app.service;
 
 import app.domain.Artist;
 import app.service.exceptions.DuplicateEntityException;

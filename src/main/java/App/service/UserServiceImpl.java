@@ -1,4 +1,4 @@
-package app.service.validators;
+package app.service;
 
 import app.domain.User;
 import app.service.exceptions.DuplicateEntityException;
@@ -55,5 +55,10 @@ public class UserServiceImpl implements UserService {
         public void deleteUser(int id) {
                 selectUserById(id);
                 userRepository.deleteById(id);
+        }
+
+        @Override
+        public int countUsers() {
+                return 0;
         }
 }
