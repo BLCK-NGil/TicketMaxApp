@@ -1,14 +1,14 @@
 package app.repository;
 
 import app.domain.Seat;
-import app.service.inputports.SeatRepositoryPort;
+import app.service.outputports.SeatRepositoryPort;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SeatRepositoryAdapter implements SeatRepositoryPort {
 
-    List<Seat> seats = new ArrayList<>();
+    private final List<Seat> seats = new ArrayList<>();
 
 
     @Override
@@ -19,21 +19,32 @@ public class SeatRepositoryAdapter implements SeatRepositoryPort {
 
     @Override
     public Seat selectById(int id) {
+        for (Seat seat : seats) {
+            if (seat.getSeatId().equals(id)) {
+                return seat;
+            }
+        }
         return null;
     }
 
     @Override
-    public List<Seat> selectAllSeats() {
-        return List.of();
+    public List<Seat> selectAll() {
+        return new ArrayList<>(seats);
     }
 
     @Override
     public Seat updateSeat(Seat seat) {
+        for (int i = 0; i < seats.size(); i++) {
+            if (seats.get(i).getSeatId().equals(seat.getSeatId())) {
+                seats.set(i, seat);
+                return seat;
+            }
+        }
         return null;
     }
 
     @Override
     public void deleteById(int id) {
-
+        seats.removeIf(seat -> seat.getSeatId().equals(id));
     }
 }
