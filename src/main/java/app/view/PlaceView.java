@@ -1,5 +1,6 @@
 package app.view;
 
+import app.domain.Place;
 import app.domain.enums.ScenaryTypeEnum;
 import app.service.exceptions.TicketMaxException;
 import app.service.inputports.PlaceService;
@@ -25,7 +26,7 @@ public class PlaceView {
             System.out.println("3. Buscar por id");
             System.out.println("4. Actualizar");
             System.out.println("5. Eliminar");
-            System.out.println("0. Salir");
+            System.out.println("0. Volver");
             option = DataTypeValidator.validateInt("Seleccione una opción: ");
 
             try {
@@ -46,7 +47,7 @@ public class PlaceView {
                         deletePlace();
                         break;
                     case 0:
-                        System.out.println("¡Hasta pronto!");
+                        System.out.println("Volviendo al menú principal...");
                         break;
                     default:
                         System.out.println("Opción no válida.");
@@ -76,19 +77,19 @@ public class PlaceView {
     }
 
     private void showAllPlaces() {
-        List<Place.Place> places = placeService.selectPlaces();
+        List<Place> places = placeService.selectPlaces();
         if (places.isEmpty()) {
             System.out.println("No hay lugares registrados.");
             return;
         }
-        for (Place.Place place : places) {
+        for (Place place : places) {
             System.out.println(place);
         }
     }
 
     private void showPlaceById() {
         int id = DataTypeValidator.validateInt("Id del lugar: ");
-        Place.Place place = placeService.selectById(id);
+        Place place = placeService.selectById(id);
         System.out.println(place);
     }
 

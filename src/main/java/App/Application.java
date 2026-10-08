@@ -1,13 +1,11 @@
 package app;
 
+import app.configuration.Config;
+
 public class Application {
 
     public static void main(String[] args) {
-        Person person = new Person(100);
 
-        int id=15;
-
-
-
+        Config.getCliUserInterface().applicationInit();
     }
 }

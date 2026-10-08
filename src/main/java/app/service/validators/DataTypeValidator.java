@@ -1,5 +1,8 @@
 package app.service.validators;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -16,7 +19,8 @@ public class DataTypeValidator {
                 sc.nextLine();
                 return value;
             } catch (InputMismatchException e) {
-                System.out.println("Solo se aceptan numeros enteros" + e.getMessage());
+                sc.nextLine(); // CAMBIO: limpia lo que se escribió mal; sin esto se queda en un ciclo infinito
+                System.out.println("Solo se aceptan numeros enteros");
             }
         }
     }
@@ -30,7 +34,8 @@ public class DataTypeValidator {
                 sc.nextLine();
                 return value;
             } catch (InputMismatchException e) {
-                System.out.println("Solo se aceptan numeros decimales" + e.getMessage());
+                sc.nextLine();
+                System.out.println("Solo se aceptan numeros decimales");
             }
         }
     }
@@ -44,7 +49,8 @@ public class DataTypeValidator {
                 sc.nextLine();
                 return value;
             } catch (InputMismatchException e) {
-                System.out.println("Solo se aceptan numeros decimal flotante" + e.getMessage());
+                sc.nextLine();
+                System.out.println("Solo se aceptan numeros decimal flotante");
             }
         }
     }
@@ -59,11 +65,26 @@ public class DataTypeValidator {
         }
     }
 
-    public static void validateDate(String s) {
-        return;
+    public static LocalDate validateDate(String prompt){
+        while(true) {
+            try {
+                System.out.println(prompt);
+                return LocalDate.parse(sc.nextLine().trim());
+            } catch (DateTimeParseException e) {
+                System.out.println("Fecha inválida. Use el formato AAAA-MM-DD, por ejemplo 2026-12-31");
+            }
+        }
     }
 
-    public static void validateTime(String s) {
-        return;
+
+    public static LocalTime validateTime(String prompt){
+        while(true) {
+            try {
+                System.out.println(prompt);
+                return LocalTime.parse(sc.nextLine().trim());
+            } catch (DateTimeParseException e) {
+                System.out.println("Hora inválida. Use el formato HH:MM, por ejemplo 20:30");
+            }
+        }
     }
 }

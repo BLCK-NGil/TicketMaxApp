@@ -2,7 +2,7 @@ package app.service;
 
 import app.domain.Seat;
 import app.service.inputports.SeatServiceInterface;
-import app.service.inputports.SeatRepositoryPort;
+import app.service.outputports.SeatRepositoryPort;
 
 import java.util.List;
 
