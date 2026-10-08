@@ -32,7 +32,6 @@ public class CliUserInterface {
 
         while(init != 0){
 
-            // CAMBIO: text block (""" """) para que cada opción salga en su propia línea
             int option = DataTypeValidator.validateInt("""
                     1. Registro
                     2. Login
@@ -41,7 +40,7 @@ public class CliUserInterface {
                     5. Eventos
                     0. Salir""");
 
-            // Si algo falla (id repetido, no existe...), mostramos el mensaje y seguimos
+            // Si algo falla (id repetido, no existe...), se muestrs el mensaje y se sigue
             try {
                 switch (option){
                     case 1:
@@ -74,7 +73,6 @@ public class CliUserInterface {
         }
     }
 
-    // CAMBIO: ahora es un ciclo con todas las opciones del usuario; 0 vuelve al menú principal
     public void userMenu(){
 
         int option;
