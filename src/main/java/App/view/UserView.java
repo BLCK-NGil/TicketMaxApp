@@ -49,6 +49,14 @@ public class UserView {
         System.out.println("Usuario eliminado.");
     }
 
+    public void countUsers() {
+        int total = userService.countUsers();
+        System.out.println("Hay " + total + " usuario(s) registrado(s).");
+    }
+
+
+    // métodos Helper
+
     // un solo formulario para crear y actualizar (DRY), igual que en PlaceView
     private void fillForm(boolean isUpdate) {
 
