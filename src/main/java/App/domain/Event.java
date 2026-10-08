@@ -1,27 +1,26 @@
 package app.domain;
 
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Event {
 
     private Integer eventId;
     private String eventName;
+    // Un evento "tiene un" lugar y "tiene un" artista (relación entre clases)
     private Place place;
     private Artist artist;
-    private Seat seat;
-    private Date eventDate;
-    private LocalDateTime eventTime;
+    private LocalDate eventDate;
+    private LocalTime eventTime;
 
     public Event() {
     }
 
-    public Event(Integer eventId, String eventName, Place place, Artist artist, Seat seat, Date eventDate, LocalDateTime eventTime) {
+    public Event(Integer eventId, String eventName, Place place, Artist artist, LocalDate eventDate, LocalTime eventTime) {
         this.eventId = eventId;
         this.eventName = eventName;
         this.place = place;
         this.artist = artist;
-        this.seat = seat;
         this.eventDate = eventDate;
         this.eventTime = eventTime;
     }
@@ -58,51 +57,27 @@ public class Event {
         this.artist = artist;
     }
 
-    public Seat getSeat() {
-        return seat;
-    }
-
-    public void setSeat(Seat seat) {
-        this.seat = seat;
-    }
-
-    public Date getEventDate() {
+    public LocalDate getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(Date eventDate) {
+    public void setEventDate(LocalDate eventDate) {
         this.eventDate = eventDate;
     }
 
-    public LocalDateTime getEventTime() {
+    public LocalTime getEventTime() {
         return eventTime;
     }
 
-    public void setEventTime(LocalDateTime eventTime) {
+    public void setEventTime(LocalTime eventTime) {
         this.eventTime = eventTime;
     }
 
-
-    public void createEvent(){
-
+    @Override
+    public String toString() {
+        return "Evento #" + eventId + " | " + eventName
+                + "\n   Artista: " + artist.getArtistName()
+                + "\n   Lugar:   " + place.getPlaceName() + " (" + place.getCity() + ")"
+                + "\n   Fecha:   " + eventDate + " a las " + eventTime;
     }
-
-    public void selectAllEvents(){
-
-    }
-
-    public void selectEventById(int id){
-
-    }
-
-    public void updateEvent(){
-
-    }
-
-    public void deleteEvent(int id){
-
-    }
-
-
-
 }

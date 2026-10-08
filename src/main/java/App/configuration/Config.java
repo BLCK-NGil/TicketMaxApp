@@ -2,14 +2,10 @@ package app.configuration;
 
 import app.repository.ArtistRepositoryImplCollection;
 import app.repository.EventRepositoryImplCollection;
-import app.repository.PlaceRepositoryImplCollection;
+import app.repository.PlaceRepository;
 import app.repository.SeatRepositoryAdapter;
 import app.repository.UserRepositoryImplCollection;
-import app.service.ArtistServiceImpl;
-import app.service.EventServiceImpl;
-import app.service.PlaceServiceImpl;
-import app.service.SeatServiceAdapter;
-import app.service.UserServiceImpl;
+import app.service.*;
 import app.service.inputports.ArtistService;
 import app.service.inputports.EventService;
 import app.service.inputports.PlaceService;
@@ -18,8 +14,10 @@ import app.service.inputports.UserService;
 import app.service.outputports.ArtistRepository;
 import app.service.outputports.EventRepository;
 import app.service.outputports.PlaceRepository;
-import app.service.outputports.SeatRepositoryPort;
+import app.service.inputports.SeatRepositoryPort;
 import app.service.outputports.UserRepository;
+import app.service.validators.ArtistServiceImpl;
+import app.service.validators.PlaceServiceImpl;
 import app.ui.CliUserInterface;
 import app.view.ArtistView;
 import app.view.EventView;
@@ -39,12 +37,19 @@ public class Config {
         SeatServiceInterface seatServiceInterface = new SeatServiceAdapter(seatRepositoryPort);
         SeatView seatView = new SeatView(seatServiceInterface);
 
-        PlaceRepository placeRepository = new PlaceRepositoryImplCollection();
-        PlaceService placeService = new PlaceServiceImpl(placeRepository);
+        PlaceRepository placeRepository = new placeRepository();
+        PlaceService placeService = new PlaceServiceImpl(PlaceRepository);
         PlaceView placeView = new PlaceView(placeService);
 
         ArtistRepository artistRepository = new ArtistRepositoryImplCollection();
         ArtistService artistService = new ArtistServiceImpl(artistRepository);
         ArtistView artistView = new ArtistView(artistService);
+
+        EventRepository eventRepository = new EventRepositoryImplCollection();
+        EventService eventService = new EventServiceImpl(eventRepository, placeService, artistService);
+        EventView eventView = new EventView(eventService);
+
+        return new CliUserInterface(userView, seatView, placeView, artistView, eventView);
     }
+
 }

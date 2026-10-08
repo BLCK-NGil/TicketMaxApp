@@ -1,5 +1,7 @@
 package app.domain;
 
+import app.domain.enums.ScenaryTypeEnum;
+
 public class Place {
 
     private Integer placeId;
@@ -7,7 +9,7 @@ public class Place {
     private String placeName;
     private String scenaryType;
 
-    public Place(){
+    public Place(Integer placeId, String city, String placeName, ScenaryTypeEnum scenaryTypeEnum){
 
     }
 

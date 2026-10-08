@@ -58,4 +58,12 @@ public class DataTypeValidator {
             }
         }
     }
+
+    public static void validateDate(String s) {
+        return;
+    }
+
+    public static void validateTime(String s) {
+        return;
+    }
 }

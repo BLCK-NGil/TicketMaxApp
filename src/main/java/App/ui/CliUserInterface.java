@@ -1,14 +1,7 @@
 package app.ui;
 
-import app.repository.UserRepositoryImplCollection;
-import app.service.UserServiceImpl;
-import app.service.inputports.UserService;
-import app.service.outputports.UserRepository;
 import app.service.validators.DataTypeValidator;
-import app.view.ArtistView;
-import app.view.PlaceView;
-import app.view.SeatView;
-import app.view.UserView;
+import app.view.*;
 
 public class CliUserInterface {
 
@@ -19,7 +12,7 @@ public class CliUserInterface {
     private final PlaceView placeView;
     private final ArtistView artistView;
 
-    public CliUserInterface(UserView userView , SeatView seatView, PlaceView placeView, ArtistView artistView){
+    public CliUserInterface(UserView userView , SeatView seatView, PlaceView placeView, ArtistView artistView, EventView eventView){
         this.userView = userView;
         this.seatView = seatView;
         this.placeView = placeView;

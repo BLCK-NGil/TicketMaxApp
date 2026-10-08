@@ -1,7 +1,7 @@
 package app.repository;
 
 import app.domain.Seat;
-import app.service.outputports.SeatRepositoryPort;
+import app.service.inputports.SeatRepositoryPort;
 
 import java.util.ArrayList;
 import java.util.List;

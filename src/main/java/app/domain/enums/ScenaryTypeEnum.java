@@ -24,3 +24,4 @@ public enum ScenaryTypeEnum {
     public String toString() {
         return label;
     }
+}

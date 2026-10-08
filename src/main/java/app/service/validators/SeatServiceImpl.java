@@ -5,7 +5,7 @@ import app.domain.enums.SeatSectorEnum;
 import app.service.exceptions.DuplicateEntityException;
 import app.service.exceptions.EntityNotFoundException;
 import app.service.inputports.SeatService;
-import app.service.outputports.SeatRepositoryPort;
+import app.service.inputports.SeatRepositoryPort;
 
 import java.util.List;
 
