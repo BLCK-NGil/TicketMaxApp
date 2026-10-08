@@ -48,3 +48,4 @@ public class Artist {
         return "Artista #" + artistId + " | " + artistName + " | " + availability;
     }
 }
+

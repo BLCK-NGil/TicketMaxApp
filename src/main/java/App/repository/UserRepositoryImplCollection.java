@@ -8,52 +8,46 @@ import java.util.List;
 
 public class UserRepositoryImplCollection implements UserRepository {
 
-    List<User> users = new ArrayList<>();
+    private final List<User> users = new ArrayList<>();
 
     @Override
     public User save(User user) {
-
         users.add(user);
-
-        /*
-        users.add(String.valueOf(user.getId()));
-        users.add(user.getName());
-        users.add(user.getLastName());
-        users.add(user.getEmail());
-        users.add(user.getPhone());
-        users.add(user.getPassword());
-        users.add(String.valueOf(user.isState()));
-        users.add(user.getCity());
-        users.add(user.getPreferences());*/
-
         return user;
     }
 
+    // recorre la lista y devuelve el usuario con ese id
     @Override
     public User selectById(int id) {
-        return null;
+        for (User user : users) {
+            if (user.getId().equals(id)) {
+                return user;
+            }
+        }
+        return null; // si no lo encuentra, el service decide qué hacer
     }
 
     @Override
     public List<User> selectAll() {
-
-        for(User user : users){
-            System.out.println(user.getId() + "" +
-                    " " + user.getName() + "" + user.getLastName() + " " + user.getEmail() + " "
-                    + user.getPhone() + "" + user.getPassword() + "" + user.isState() +
-                    "" + user.getCity() + "" + user.getPreferences());
-        }
-
-        return users;
+        return new ArrayList<>(users);
     }
 
+    // busca la posición del usuario y lo reemplaza por la versión nueva
     @Override
     public User updateUser(User user) {
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getId().equals(user.getId())) {
+                users.set(i, user);
+                return user;
+            }
+        }
         return null;
     }
 
+    //borra de la lista el usuario que tenga ese id
     @Override
     public void deleteById(int id) {
-
+        users.removeIf(user -> user.getId().equals(id));
     }
+
 }

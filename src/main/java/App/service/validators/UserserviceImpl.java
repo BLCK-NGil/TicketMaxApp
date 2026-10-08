@@ -1,7 +1,8 @@
-package app.service;
+package app.service.validators;
 
-import app.domain.enums.SelectStateEnum;
 import app.domain.User;
+import app.service.exceptions.DuplicateEntityException;
+import app.service.exceptions.EntityNotFoundException;
 import app.service.inputports.UserService;
 import app.service.outputports.UserRepository;
 
@@ -9,38 +10,50 @@ import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
-    private final UserRepository userRepository;
+        private final UserRepository userRepository;
 
-    public UserServiceImpl(UserRepository userRepository){
-        this.userRepository = userRepository;
-    }
+        public UserServiceImpl(UserRepository userRepository) {
+                this.userRepository = userRepository;
+        }
 
-    @Override
-    public User create(Integer id, String name, String lastName, String email, String phone, String password, String state, String city, String preferences) {
+        @Override
+        public User create(Integer id, String name, String lastName, String email, String phone, String password, String state, String city, String preferences) {
 
-        User user = new User(id, name, lastName, email, phone, password, state, city, preferences);
+                // ahora que selectById funciona, se evitam ids repetidos
+                if (userRepository.selectById(id) != null) {
+                        throw new DuplicateEntityException("un usuario", id);
+                }
 
-        return userRepository.save(user);
-    }
+                User user = new User(id, name, lastName, email, phone, password, state, city, preferences);
 
-    @Override
-    public void selectById(int id) {
+                return userRepository.save(user);
+        }
 
-    }
+        @Override
+        public User selectUserById(int id) {
+                User user = userRepository.selectById(id);
+                if (user == null) {
+                        throw new EntityNotFoundException("un usuario", id);
+                }
+                return user;
+        }
 
-    @Override
-    public void update() {
+        @Override
+        public User updateUser(Integer id, String name, String lastName, String email, String phone, String password, String state, String city, String preferences) {
+                selectUserById(id); // si no existe, lanza la excepción y no sigue
+                User user = new User(id, name, lastName, email, phone, password, state, city, preferences);
+                return userRepository.updateUser(user);
+        }
 
-    }
+        @Override
+        public List<User> selectUsers() {
 
-    @Override
-    public List<User> selectUsers() {
+                return userRepository.selectAll();
+        }
 
-        return userRepository.selectAll();
-    }
-
-    @Override
-    public void deleteUser(int id) {
-
-    }
+        @Override
+        public void deleteUser(int id) {
+                selectUserById(id);
+                userRepository.deleteById(id);
+        }
 }

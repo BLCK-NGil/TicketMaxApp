@@ -1,7 +1,5 @@
 package app.domain;
 
-import app.domain.enums.SelectStateEnum;
-
 public class User extends Person{
 
     private String city;
@@ -39,6 +37,12 @@ public class User extends Person{
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Usuario #" + id + " | " + name + " " + lastName
+                + " | " + email + " | Tel: " + phone
+                + " | Estado: " + state + " | Ciudad: " + city
+                + " | Preferencia: " + preferences;
+    }
 
 }

@@ -12,6 +12,8 @@ public interface UserRepository {
     public List<User> selectAll();
     public User updateUser(User user);
     public void deleteById(int id);
+    // NUEVO (adicional): cuántos usuarios hay en el array
+    public int countUsers();
 
 
 

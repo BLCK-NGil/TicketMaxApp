@@ -48,6 +48,9 @@ public class CliUserInterface {
                 case 4:
                     artistView.showMenu();
                     break;
+                case 5:
+                    EventView.showMenu();
+                    break;
                 case 0:
                     System.out.println("Saliendo de la aplicación");
                     init = 0;
