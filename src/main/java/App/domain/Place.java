@@ -1,20 +1,29 @@
-package App.domain;
+package app.domain;
 
 public class Place {
-    private Integer id;
+
+    private Integer placeId;
     private String city;
     private String placeName;
     private String scenaryType;
 
-    public Place() {
+    public Place(){
 
     }
 
-    public Place(Integer id, String city, String placeName, String scenaryType) {
-        this.id = id;
+    public Place(Integer placeId, String city, String placeName, String scenaryType) {
+        this.placeId = placeId;
         this.city = city;
         this.placeName = placeName;
         this.scenaryType = scenaryType;
+    }
+
+    public Integer getPlaceId() {
+        return placeId;
+    }
+
+    public void setPlaceId(Integer placeId) {
+        this.placeId = placeId;
     }
 
     public String getCity() {
@@ -23,14 +32,6 @@ public class Place {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getPlaceName() {
@@ -48,26 +49,30 @@ public class Place {
     public void setScenaryType(String scenaryType) {
         this.scenaryType = scenaryType;
     }
-}
-//Por ahora porque después los moveremos de carpeta al service
 
-    public void create() {
+    //POr ahora porque despues los moveremos de carpeta al service
 
-    }
-    public void selectAllPlaces() {
+    public void createPlace(){
 
     }
-    public void selectByPlaceId(int id) {
+
+    public void selectAllPlaces(){
 
     }
+
+    public void selectPlaceById(int id){
+
+    }
+
     public void updatePlace(){
 
     }
+
     public void deletePlace(int id){
 
     }
-    public void selectPlaceState(int id){
 
-    }
+
+
 
 }

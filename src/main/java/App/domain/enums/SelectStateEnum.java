@@ -1,4 +1,4 @@
-package App.domain.enums;
+package app.domain.enums;
 
 public enum SelectStateEnum {
 

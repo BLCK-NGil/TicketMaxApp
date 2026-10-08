@@ -1,4 +1,4 @@
-package App.service;
+package app.service.validators;
 
 public class UserService {
 

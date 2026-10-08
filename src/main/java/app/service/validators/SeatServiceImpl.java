@@ -5,15 +5,15 @@ import app.domain.enums.SeatSectorEnum;
 import app.service.exceptions.DuplicateEntityException;
 import app.service.exceptions.EntityNotFoundException;
 import app.service.inputports.SeatService;
-import app.service.outputports.SeatRepository;
+import app.service.outputports.SeatRepositoryPort;
 
 import java.util.List;
 
 public class SeatServiceImpl implements SeatService {
 
-    private final SeatRepository seatRepository;
+    private final SeatRepositoryPort seatRepository;
 
-    public SeatServiceImpl(SeatRepository seatRepository) {
+    public SeatServiceImpl(SeatRepositoryPort seatRepository) {
         this.seatRepository = seatRepository;
     }
 

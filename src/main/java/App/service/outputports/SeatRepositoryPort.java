@@ -4,7 +4,7 @@ import app.domain.Seat;
 
 import java.util.List;
 
-public interface SeatRepository {
+public interface SeatRepositoryPort {
 
     Seat save(Seat seat);
     Seat selectById(int id);

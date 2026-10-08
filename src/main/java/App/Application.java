@@ -1,6 +1,6 @@
-package App.domain;
+package app;
 
-public class Main {
+public class Application {
 
     public static void main(String[] args) {
         Person person = new Person(100);

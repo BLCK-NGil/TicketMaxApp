@@ -1,12 +1,12 @@
 package app.repository;
 
 import app.domain.Seat;
-import app.service.outputports.SeatRepository;
+import app.service.outputports.SeatRepositoryPort;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SeatRepositoryImplCollection implements SeatRepository {
+public class SeatRepositoryImplCollection implements SeatRepositoryPort {
 
     private final List<Seat> seats = new ArrayList<>();
 

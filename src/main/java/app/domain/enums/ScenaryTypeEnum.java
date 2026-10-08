@@ -8,20 +8,19 @@ public enum ScenaryTypeEnum {
     OPEN_AIR ("Aire libre");
 
     //cada constante guarda su texto bonito aquí. una vez asignado, nunca cambia!!!
-    private final string label;
+    private final String label;
 
     //el constructor de un enum es siempre privado, porque nadie puede crear constantes nuevas desde afuera.
-    ScenaryTypeEnum(string label) {
+    ScenaryTypeEnum(String label) {
         this.label = label;
     }
 
-    public string getLabel() {
+    public String getLabel() {
         return label;
     }
 
     //cuando imprima el enum, en vez de ver `STADIUM` se verá `Estadio`.
     @Override
     public String toString() {
-        return super.toString();
+        return label;
     }
-}

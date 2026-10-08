@@ -1,6 +1,5 @@
 package app.view;
 
-import app.domain.Place;
 import app.domain.enums.ScenaryTypeEnum;
 import app.service.exceptions.TicketMaxException;
 import app.service.inputports.PlaceService;
@@ -77,19 +76,19 @@ public class PlaceView {
     }
 
     private void showAllPlaces() {
-        List<Place> places = placeService.selectPlaces();
+        List<Place.Place> places = placeService.selectPlaces();
         if (places.isEmpty()) {
             System.out.println("No hay lugares registrados.");
             return;
         }
-        for (Place place : places) {
+        for (Place.Place place : places) {
             System.out.println(place);
         }
     }
 
     private void showPlaceById() {
         int id = DataTypeValidator.validateInt("Id del lugar: ");
-        Place place = placeService.selectById(id);
+        Place.Place place = placeService.selectById(id);
         System.out.println(place);
     }
 

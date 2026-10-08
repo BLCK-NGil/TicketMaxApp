@@ -1,27 +1,30 @@
-package App.domain;
+package app.domain;
 
 public class Seat {
-    private int idSeat;
+
+    private Integer seatId;
     private String seatNumber;
     private String seatSector;
-    private boolean isAvailable;
+    private String isAvailable;
 
-    public Seat() {
+    public Seat(){
+
     }
 
-    public Seat(int idSeat, String seatNumber, String seatSector, boolean state) {
-        this.idSeat = idSeat;
+    public Seat(Integer seatId, String seatNumber, String seatSector, String isAvailable) {
+        this.seatId = seatId;
         this.seatNumber = seatNumber;
         this.seatSector = seatSector;
-        this.state = state;
+        this.isAvailable = isAvailable;
     }
 
-    public int getIdSeat() {
-        return idSeat;
+
+    public Integer getSeatId() {
+        return seatId;
     }
 
-    public void setIdSeat(int idSeat) {
-        this.idSeat = idSeat;
+    public void setSeatId(Integer seatId) {
+        this.seatId = seatId;
     }
 
     public String getSeatNumber() {
@@ -40,27 +43,11 @@ public class Seat {
         this.seatSector = seatSector;
     }
 
-    public boolean isAvailable() {
+    public String isAvailable() {
         return isAvailable;
     }
 
-    public void setAvailable(boolean available) {
+    public void setAvailable(String available) {
         isAvailable = available;
     }
-
-    public void createSeat(String type){
-    }
-    public void SelectAllSeats(){
-
-    }
-    public void selectSeatById(int id){
-
-    }
-    public void updateSeat(int id){
-
-    }
-    public void deleteSeat(int id){
-
-    }
-
 }

@@ -1,38 +1,44 @@
 package app.domain;
 
-public class User extends Person {
+import app.domain.enums.SelectStateEnum;
+
+public class User extends Person{
+
     private String city;
     private String preferences;
 
-    @Override
-    public void create() {
-        super.create();
+    public User() {
+        super();
     }
 
-     @Override
-    public void selectAll(){
-
-        super.selectAll();
+    public User(Integer id, String name, String lastName, String email, String phone, String password, String state, String city, String preferences) {
+        super(id, name, lastName, email, phone, password, state);
+        this.city = city;
+        this.preferences = preferences;
     }
 
-    @Override
-    public void selectById(int id){
-        super.selectById(id);
+    public String getCity() {
+        return city;
     }
 
-    @Override
-    public void update(){
-        super.update();
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    @Override
-    public void delete(int id) {
-
-        super.delete(id);
+    public String getPreferences() {
+        return preferences;
     }
 
-    @Override
-    public void selectState(int id){ super.selectState(int id);
+    public void setPreferences(String preferences) {
+        this.preferences = preferences;
+    }
+
+
+
+    public void addPreferences(String preference){
 
     }
+
+
+
 }
