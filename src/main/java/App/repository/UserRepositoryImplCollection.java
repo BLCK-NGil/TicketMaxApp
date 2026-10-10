@@ -50,9 +50,10 @@ public class UserRepositoryImplCollection implements UserRepository {
         users.removeIf(user -> user.getId().equals(id));
     }
 
+    //cuenta los usuarios
     @Override
     public int countUsers() {
-        return 0;
+        return users.size();
     }
 
 }

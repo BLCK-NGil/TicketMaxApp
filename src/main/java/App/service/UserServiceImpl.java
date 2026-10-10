@@ -59,6 +59,6 @@ public class UserServiceImpl implements UserService {
 
         @Override
         public int countUsers() {
-                return 0;
+                return userRepository.countUsers();
         }
 }
